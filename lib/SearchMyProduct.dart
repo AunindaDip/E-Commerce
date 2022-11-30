@@ -197,16 +197,11 @@ class searchproduct extends SearchDelegate{
                   itemBuilder: (context, Index) {
                     return GestureDetector(
                       onTap: () {
-
-                          controller.intializequantity();
-                          Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => productdetails(
-                                  Modelproducts2: snapshot.data[Index])));
-
-
-
-
-
+                        controller.intializequantity();
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) =>
+                                productdetails(
+                                    Modelproducts2: snapshot.data[Index])));
                       },
                       child: Card(
                         elevation: 2,
