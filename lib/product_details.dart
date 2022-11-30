@@ -20,10 +20,30 @@ class productdetails extends StatelessWidget {
   int itemcount = 1;
   productdetails({Key? key, required this.Modelproducts2}) : super(key: key);
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   @override
   Widget build(BuildContext context) {
-    controller.intializequantity();
-    return Scaffold(
+
+
+
+
+
+  return Scaffold(
       appBar: AppBar(
         title: Text(Modelproducts2.name ?? "No Name"),
         centerTitle: true,
@@ -120,7 +140,22 @@ class productdetails extends StatelessWidget {
                               }),
                           Padding(
                             padding: const EdgeInsets.all(8.0),
-                            child: Obx(() => Text(
+                            child:
+
+
+
+
+                            Obx(() =>
+
+                                
+
+
+                                Text(
+
+
+
+
+
                                   controller.numOfitem.obs.toString(),
                                   style: const TextStyle(color: Colors.black),
                                 )),
@@ -174,11 +209,11 @@ class productdetails extends StatelessWidget {
       quantity: controller.numOfitem.toInt(),
     );
     if (isExistingincart(controller.cart, cartitem) == true) {
-      Fluttertoast.showToast(
+     Fluttertoast.showToast(
           msg: "Product Already Added To cart Please check Your Cart ",
           toastLength: Toast.LENGTH_SHORT,
           gravity: ToastGravity.TOP,
-          timeInSecForIosWeb: 4,
+          timeInSecForIosWeb: 1,
           backgroundColor: Colors.black,
           textColor: Colors.white,
           fontSize: 16.0);
@@ -188,11 +223,11 @@ class productdetails extends StatelessWidget {
       var jsonDbEncoded = jsonEncode(controller.cart);
       await box.write(My_Cart_key, jsonDbEncoded);
       controller.cart.refresh();
-      Fluttertoast.showToast(
+    Fluttertoast.showToast(
           msg: "Product Added To Cart",
           toastLength: Toast.LENGTH_SHORT,
           gravity: ToastGravity.TOP,
-          timeInSecForIosWeb: 4,
+          timeInSecForIosWeb: 1,
           backgroundColor: Colors.black,
           textColor: Colors.white,
           fontSize: 16.0);

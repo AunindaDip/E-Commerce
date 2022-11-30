@@ -7,8 +7,6 @@ import 'package:symbexecommerce/Models/Cartmodel1.dart';
 class cartcontroller extends GetxController {
   var numOfitem = 1.obs;
 
-  //ar cartitem=<modelproducts2>[].obs;
-
   var cart = List<cartmodel1>.empty(growable: true).toList().obs;
   var box = GetStorage();
 
@@ -25,7 +23,7 @@ class cartcontroller extends GetxController {
     Savedata();
   }
 
-  Savedata() => {box.write('MY_CART_KEY', jsonEncode(cart))};
+
 
   void removeitem() {
     if (numOfitem.value > 1) {
@@ -40,4 +38,8 @@ class cartcontroller extends GetxController {
   void intializequantity() {
     numOfitem.value = 1;
   }
+
+  Savedata() => {box.write('MY_CART_KEY', jsonEncode(cart))};
+
+
 }

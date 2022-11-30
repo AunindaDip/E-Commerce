@@ -18,7 +18,7 @@ import 'package:http/http.dart' as http;
 import 'package:get/get.dart';
 import 'CartView.dart';
 import 'Models/Cartmodel1.dart';
-import 'Models/testingOrderModel.dart';
+import 'Models/placeordermodel.dart';
 import 'home.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 
@@ -403,15 +403,14 @@ class _placeorderState extends State<placeorder> {
 
       Cartcontroller.cart.remove(Cartcontroller.cart);
       save(Cartcontroller.cart);
-      print(response.body);
+
 
 
     } else {
 
-     print(response.statusCode);
-     print(response.body);
 
-     //EasyLoading.show(status: response.body.toString());
+
+
      EasyLoading.dismiss();
 
     }
@@ -512,10 +511,9 @@ class _placeorderState extends State<placeorder> {
 
         Cartcontroller.cart.remove(Cartcontroller.cart);
         save(Cartcontroller.cart);
-        print(response.body);
+
       } else {
-        print(response.statusCode);
-        print(response.body);
+
 
         //EasyLoading.show(status: response.body.toString());
         EasyLoading.dismiss();
@@ -529,68 +527,12 @@ String selectcity = " ";
 final cititselectd = TextEditingController();
 
 List<String> citesofbd = [
-  "Dhaka",
-  "Faridpur",
-  "Gazipur",
-  "Gopalganj",
-  "Jamalpur",
-  "Kishoreganj",
-  "Madaripur",
-  "Manikganj",
-  "Munshiganj",
-  "Mymensingh",
-  "Narayanganj",
-  "Narsingdi",
-  "Netrokona",
-  "Rajbari",
-  "Shariatpur",
-  "Sherpur",
-  "Tangail",
-  "Bogra",
-  "Joypurhat",
-  "Naogaon",
-  "Natore",
-  "Nawabganj",
-  "Pabna",
-  "Rajshahi",
-  "Sirajgonj",
-  "Dinajpur",
-  "Gaibandha",
-  "Kurigram",
-  "Lalmonirhat",
-  "Nilphamari",
-  "Panchagarh",
-  "Rangpur",
-  "Thakurgaon",
-  "Barguna",
-  "Barisal",
-  "Bhola",
-  "Jhalokati",
-  "Patuakhali",
-  "Pirojpur",
-  "Bandarban",
-  "Brahmanbaria",
-  "Chandpur",
-  "Chittagong",
-  "Comilla",
-  "Cox's Bazar",
-  "Feni",
-  "Khagrachari",
-  "Lakshmipur",
-  "Noakhali",
-  "Rangamati",
-  "Habiganj",
-  "Maulvibazar",
-  "Sunamganj",
-  "Sylhet",
-  "Bagerhat",
-  "Chuadanga",
-  "Jessore",
-  "Jhenaidah",
-  "Khulna",
-  "Kushtia",
-  "Magura",
-  "Meherpur",
-  "Narail",
-  "Satkhira",
+  "Dhaka", "Faridpur", "Gazipur", "Gopalganj", "Jamalpur", "Kishoreganj", "Madaripur", "Manikganj",
+  "Munshiganj", "Mymensingh", "Narayanganj", "Narsingdi", "Netrokona", "Rajbari", "Shariatpur",
+  "Sherpur", "Tangail", "Bogra", "Joypurhat", "Naogaon", "Natore", "Nawabganj", "Pabna", "Rajshahi",
+  "Sirajgonj", "Dinajpur", "Gaibandha", "Kurigram", "Lalmonirhat", "Nilphamari", "Panchagarh", "Rangpur",
+  "Thakurgaon", "Barguna", "Barisal", "Bhola", "Jhalokati", "Patuakhali", "Pirojpur", "Bandarban", "Brahmanbaria",
+  "Chandpur", "Chittagong", "Comilla", "Cox's Bazar", "Feni", "Khagrachari", "Lakshmipur", "Noakhali", "Rangamati",
+  "Habiganj", "Maulvibazar", "Sunamganj", "Sylhet", "Bagerhat", "Chuadanga", "Jessore", "Jhenaidah", "Khulna", "Kushtia",
+  "Magura", "Meherpur", "Narail", "Satkhira",
 ];

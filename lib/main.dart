@@ -1,16 +1,22 @@
 import 'package:animated_splash_screen/animated_splash_screen.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
 import 'package:symbexecommerce/login.dart';
 import 'package:symbexecommerce/CartView.dart';
 import 'package:symbexecommerce/Controller/Cart_controller.dart';
-
-void main() {
+import 'package:firebase_analytics/firebase_analytics.dart';
+void main() async{
   Get.put((cartcontroller()));
   runApp(const MyApp());
+  await Firebase.initializeApp(
+
+  );
   configLoading();
+
 }
+
 void configLoading() {
   EasyLoading.instance
     ..displayDuration = const Duration(milliseconds: 2000)
@@ -28,9 +34,12 @@ void configLoading() {
   //..customAnimation = CustomAnimation();
 }
 
+
+
+
+
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -58,6 +67,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+
   @override
   Widget build(BuildContext context) {
     return WillPopScope(

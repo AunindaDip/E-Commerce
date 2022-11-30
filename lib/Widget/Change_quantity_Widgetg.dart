@@ -17,7 +17,7 @@ class ChangeQuantityWidget extends StatelessWidget {
     return ElegantNumberButton(
         initialValue: controller.cart[Index].quantity,
         minValue: 1,
-        maxValue: 99,
+        maxValue: 10,
         buttonSizeHeight: 40,
         buttonSizeWidth: 40,
         color: Colors.white10,

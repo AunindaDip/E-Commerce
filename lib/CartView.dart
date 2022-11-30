@@ -15,6 +15,7 @@ class CartScreen extends StatelessWidget {
   final box = GetStorage();
   cartcontroller controller = Get.find();
   static const routeName = '/cart';
+
   @override
   Widget build(BuildContext context) {
     if (controller.cart.isEmpty) {

@@ -19,7 +19,8 @@ class cartmodel1 extends modelproducts2 {
             categoryId: category_id,
             description: description,
             salePrice: salePrice,
-            stockStatus: stock_status);
+            stockStatus: stock_status
+  );
 
   factory cartmodel1.fromjson(Map<String, dynamic> json) {
     final product = modelproducts2.fromJson(json);

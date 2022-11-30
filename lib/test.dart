@@ -80,7 +80,7 @@ class myorederedprouctlist extends StatelessWidget {
 }
 
 Future<List<myorderitem>> _getitems(String id) async {
-  var url = Uri.parse("https://www.ecommerce.symbexit.com/api/viewOrderitem");
+  var url = Uri.parse("");
   var data = await http.get(url);
   var jsonData = json.decode(data.body);
   final list = jsonData as List<dynamic>;

@@ -1,9 +1,16 @@
+
+import 'package:firebase_analytics/firebase_analytics.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:intl/intl.dart';
 import 'package:symbexecommerce/Models/productModel1.dart';
+import 'Controller/Cart_controller.dart';
 import 'product_details.dart';
 
 class products extends StatefulWidget {
@@ -14,6 +21,18 @@ class products extends StatefulWidget {
 }
 
 class _productsState extends State<products> {
+  final controller = Get.put(cartcontroller());
+
+  static FirebaseAnalytics analytics = FirebaseAnalytics.instance;
+  static FirebaseAnalyticsObserver observer =
+  FirebaseAnalyticsObserver(analytics: analytics);
+
+
+  @override
+  void initState() {
+    Firebase.initializeApp();
+    super.initState();
+  }
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -44,9 +63,22 @@ class _productsState extends State<products> {
                   itemBuilder: (context, Index) {
                     return GestureDetector(
                       onTap: () {
-                        Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) => productdetails(
-                                Modelproducts2: snapshot.data[Index])));
+
+
+
+                          controller.intializequantity();
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => productdetails(
+                                  Modelproducts2: snapshot.data[Index])));
+
+
+
+
+
+
+
+
+
                       },
                       child: Card(
                         elevation: 2,
@@ -121,3 +153,4 @@ Future<List<modelproducts2>> fetchproducts() async {
   final list = jsonData as List<dynamic>;
   return list.map((e) => modelproducts2.fromJson(e)).toList();
 }
+

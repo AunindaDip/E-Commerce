@@ -2,9 +2,12 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:intl/intl.dart';
 import 'package:symbexecommerce/product_details.dart';
 
+import 'Controller/Cart_controller.dart';
 import 'Models/productModel1.dart';
 import 'package:http/http.dart' as http;
 
@@ -42,6 +45,10 @@ class searchproduct extends SearchDelegate{
 
   @override
   Widget? buildLeading(BuildContext context) {
+
+
+    final controller = Get.put(cartcontroller());
+
     return IconButton(
       icon: Icon(
         Icons.arrow_back_ios,
@@ -160,6 +167,8 @@ class searchproduct extends SearchDelegate{
 
   @override
   Widget buildSuggestions(BuildContext context) {
+
+    final controller = Get.put(cartcontroller());
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: FutureBuilder(
@@ -188,9 +197,16 @@ class searchproduct extends SearchDelegate{
                   itemBuilder: (context, Index) {
                     return GestureDetector(
                       onTap: () {
-                        Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) => productdetails(
-                                Modelproducts2: snapshot.data[Index])));
+
+                          controller.intializequantity();
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => productdetails(
+                                  Modelproducts2: snapshot.data[Index])));
+
+
+
+
+
                       },
                       child: Card(
                         elevation: 2,

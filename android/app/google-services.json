@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "414690307471",
+    "project_id": "ecommerce-9802d",
+    "storage_bucket": "ecommerce-9802d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:414690307471:android:52da110e0aa03ccea5affa",
+        "android_client_info": {
+          "package_name": "com.example.symbexecommerce"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "414690307471-jd8gm3q8lq8h34dapvgqqqs1b7ag9uqk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBo-Gz1-gbtrEgUoU-9YBHooVEBWJuVB2g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "414690307471-jd8gm3q8lq8h34dapvgqqqs1b7ag9uqk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
