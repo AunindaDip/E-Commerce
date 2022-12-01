@@ -260,7 +260,7 @@ class searchproduct extends SearchDelegate{
                   staggeredTileBuilder: (Index) => const StaggeredTile.fit(1));
             } else if (snapshot.hasError) {
               return Center(
-                child: Text("somrthung went wrong"),
+                child: Text("something  went wrong"),
               );
             }
             return const Center(child: CircularProgressIndicator());
