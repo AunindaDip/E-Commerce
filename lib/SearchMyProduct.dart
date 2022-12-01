@@ -47,7 +47,6 @@ class searchproduct extends SearchDelegate{
   Widget? buildLeading(BuildContext context) {
 
 
-    final controller = Get.put(cartcontroller());
 
     return IconButton(
       icon: Icon(
